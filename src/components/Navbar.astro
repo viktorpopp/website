@@ -1,0 +1,25 @@
+---
+const items: { name: string; url: string }[] = [
+  { name: "home", url: "/" },
+  { name: "blog", url: "/blog" },
+];
+---
+
+<header class="navigation">
+  {items.map((item) => <a href={item.url}>{item.name}</a>)}
+</header>
+
+<style>
+  .navigation {
+    position: absolute;
+    inset: 20px auto auto 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .navigation a {
+    color: inherit;
+  }
+</style>

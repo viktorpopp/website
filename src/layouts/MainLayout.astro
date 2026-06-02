@@ -1,6 +1,7 @@
 ---
 import { Font } from "astro:assets";
 import "../styles/global.css";
+import Navbar from "../components/Navbar.astro";
 const { frontmatter } = Astro.props;
 ---
 
@@ -21,6 +22,7 @@ const { frontmatter } = Astro.props;
     <Font cssVariable="--noto-serif" preload />
   </head>
   <body>
+    <Navbar />
     <main>
       {frontmatter.title && <h1>{frontmatter.title}</h1>}
       <article>
