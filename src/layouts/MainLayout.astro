@@ -1,0 +1,31 @@
+---
+import { Font } from "astro:assets";
+import "../styles/global.css";
+const { frontmatter } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>
+      {
+        frontmatter.title
+          ? `${frontmatter.title} | Viktor Popp's Corner`
+          : "Viktor Popp's Corner"
+      }
+    </title>
+
+    <Font cssVariable="--noto-serif" preload />
+  </head>
+  <body>
+    <main>
+      {frontmatter.title && <h1>{frontmatter.title}</h1>}
+      <article>
+        <slot />
+      </article>
+    </main>
+  </body>
+</html>
