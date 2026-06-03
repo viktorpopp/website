@@ -23,7 +23,7 @@ const { frontmatter } = Astro.props;
   </head>
   <body>
     <Navbar />
-    <main>
+    <main class={frontmatter.classes}>
       {frontmatter.title && <h1>{frontmatter.title}</h1>}
       <article>
         <slot />
