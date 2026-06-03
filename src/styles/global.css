@@ -14,6 +14,11 @@ main {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  flex-direction: column;
+}
+
+main.flex-row {
+  flex-direction: row;
 }
 
 main:not(.home) {
