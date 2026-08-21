@@ -6,10 +6,17 @@ body {
 
   /* Theme */
   line-height: 1.6;
-  font-size: 18px;
+  font-size: 1.125em;
   font-family: var(--noto-serif);
   color: #282828;
   background-color: #f9f5d7;
+}
+
+@media (max-width: 768px) {
+  body {
+    margin: 20px 20px;
+    font-size: 1em;
+  }
 }
 
 h1,
