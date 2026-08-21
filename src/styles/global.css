@@ -1,0 +1,23 @@
+body {
+  /* Layout */
+  height: 100vh;
+  margin: 40px auto;
+  max-width: 750px;
+
+  /* Theme */
+  line-height: 1.6;
+  font-size: 18px;
+  font-family: var(--noto-serif);
+  color: #282828;
+  background-color: #f9f5d7;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+a {
+  color: inherit;
+}

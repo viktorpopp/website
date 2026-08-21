@@ -1,0 +1,75 @@
+---
+import type { $brand, $input, $output } from "astro:schema";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const years_old = (() => {
+  const birthday = new Date("2011-04-09");
+  const today = new Date();
+
+  let age = today.getFullYear() - birthday.getFullYear();
+  const monthDiff = today.getMonth() - birthday.getMonth();
+
+  if (
+    monthDiff < 0 ||
+    (monthDiff === 0 && today.getDate() < birthday.getDate())
+  ) {
+    age--;
+  }
+
+  return age;
+})();
+
+const RAW_LINKS = {
+  denmark: "https://en.wikipedia.org/wiki/Denmark", // TODO: Change to a page with a bunch of pictures or something like that
+  systemsDev: "https://github.com/viktorpopp/blahaj32",
+  webDev: "https://github.com/viktorpopp/website",
+  videoGame:
+    "https://sukus.net/games/coding-pirates-gamejam-2025/zombie-apocalypse/",
+  ddns: "https://github.com/viktorpopp/dragon-dns/",
+  chemistry: "https://en.wikipedia.org/wiki/Chemistry",
+  chess: "https://en.wikipedia.org/wiki/Chess",
+  puzzles: "https://en.wikipedia.org/wiki/Rubik%27s_Cube", // TODO: Change to a page showing puzzles i like
+  rust: "https://github.com/viktorpopp/rusty-chat",
+  c: "https://www.c-language.org/", // TODO: Showcase a project
+  cplusplus: "https://en.wikipedia.org/wiki/C%2B%2B", // TODO: Showcase a project
+  ruby: "https://www.ruby-lang.org/", // TODO: Showcase a project
+  typescript: "https://www.typescriptlang.org/", // TODO: Showcase a project
+  golang: "https://go.dev/", // TODO: Showcase a project
+  csharp: "https://github.com/viktorpopp/NuclearReactor",
+};
+
+const LINKS = Object.fromEntries(
+  Object.entries(RAW_LINKS).map(([key, value]) => [
+    key,
+    { href: value, target: "_blank" },
+  ]),
+);
+---
+
+<BaseLayout>
+  <h1>Hello</h1>
+
+  <p>
+    My name is Viktor. I am a {years_old} years old hobbyist software developer from&nbsp;
+    <a {...LINKS.denmark}>Denmark</a>.
+  </p>
+
+  <p>
+    I primarily do <a {...LINKS.systemsDev}>systems-</a> and <a
+      {...LINKS.webDev}>web development</a
+    > but occasionally I also create <a {...LINKS.videoGame}>video games</a>,
+    and small utilities such as my <a {...LINKS.ddns}>DDNS service</a>. I also
+    like <a {...LINKS.chemistry}>chemistry</a>, playing <a {...LINKS.chess}
+      >chess</a
+    >, and <a {...LINKS.puzzles}>solving puzzles</a>.
+  </p>
+
+  <p>
+    I do most of my coding in <a {...LINKS.rust}>Rust</a>, <a {...LINKS.c}>C</a
+    >, <a {...LINKS.cplusplus}>C++</a>, <a {...LINKS.ruby}>Ruby</a> and <a
+      {...LINKS.typescript}>TypeScript</a
+    >, but i also like playing around with other technologies such as <a
+      {...LINKS.golang}>Go</a
+    > and <a {...LINKS.csharp}>C#</a>.
+  </p>
+</BaseLayout>
