@@ -1,0 +1,19 @@
+---
+import { Font } from "astro:assets";
+import { ClientRouter } from "astro:transitions";
+
+export type Props = {
+  title?: string;
+};
+
+const title = !Astro.props.title
+  ? "Viktor Popp"
+  : Astro.props.title.concat(" | Viktor Popp");
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="generator" content={Astro.generator} />
+<Font cssVariable="--noto-serif" preload />
+<title>{title}</title>
+<ClientRouter />
