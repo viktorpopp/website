@@ -7,7 +7,7 @@
 
 body {
   /* Layout */
-  height: 100vh;
+  height: 100vh - 40px;
   margin: 40px auto;
   max-width: 750px;
 

@@ -46,29 +46,50 @@ const LINKS = Object.fromEntries(
 ---
 
 <BaseLayout>
-  <h1>Hello :3</h1>
+  <div class="container">
+    <h1>Hello :3</h1>
 
-  <p>
-    My name is Viktor. I am a {years_old} years old hobbyist software developer from&nbsp;
-    <a {...LINKS.denmark}>Denmark</a>.
-  </p>
+    <p>
+      My name is Viktor. I am a {years_old} years old hobbyist software developer
+      from&nbsp;
+      <a {...LINKS.denmark}>Denmark</a>.
+    </p>
 
-  <p>
-    I primarily do <a {...LINKS.systemsDev}>systems-</a> and <a
-      {...LINKS.webDev}>web development</a
-    > but occasionally I also create <a {...LINKS.videoGame}>video games</a>,
-    and small utilities such as my <a {...LINKS.ddns}>DDNS service</a>. I also
-    like <a {...LINKS.chemistry}>chemistry</a>, <a {...LINKS.chess}
-      >playing chess</a
-    >, and <a {...LINKS.puzzles}>solving puzzles</a>.
-  </p>
+    <p>
+      I primarily do <a {...LINKS.systemsDev}>systems-</a> and <a
+        {...LINKS.webDev}>web development</a
+      > but occasionally I also create <a {...LINKS.videoGame}>video games</a>,
+      and small utilities such as my <a {...LINKS.ddns}>DDNS service</a>. I also
+      like <a {...LINKS.chemistry}>chemistry</a>, <a {...LINKS.chess}
+        >playing chess</a
+      >, and <a {...LINKS.puzzles}>solving puzzles</a>.
+    </p>
 
-  <p>
-    I do most of my coding in <a {...LINKS.rust}>Rust</a>, <a {...LINKS.c}>C</a
-    >, <a {...LINKS.cplusplus}>C++</a>, <a {...LINKS.ruby}>Ruby</a> and <a
-      {...LINKS.typescript}>TypeScript</a
-    >, but i also like playing around with other technologies such as <a
-      {...LINKS.golang}>Go</a
-    > and <a {...LINKS.csharp}>C#</a>.
-  </p>
+    <p>
+      I do most of my coding in <a {...LINKS.rust}>Rust</a>, <a {...LINKS.c}
+        >C</a
+      >, <a {...LINKS.cplusplus}>C++</a>, <a {...LINKS.ruby}>Ruby</a> and <a
+        {...LINKS.typescript}>TypeScript</a
+      >, but i also like playing around with other technologies such as <a
+        {...LINKS.golang}>Go</a
+      > and <a {...LINKS.csharp}>C#</a>.
+    </p>
+  </div>
 </BaseLayout>
+
+<style>
+  .container {
+    position: absolute;
+    width: 30%;
+    box-sizing: border-box;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      width: 90%;
+    }
+  }
+</style>
