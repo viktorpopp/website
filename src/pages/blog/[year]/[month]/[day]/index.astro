@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../../../../../layouts/BaseLayout.astro";
+import {
+  formatFullDate,
+  getAllPosts,
+  monthName,
+} from "../../../../../lib/posts";
+
+export async function getStaticPaths() {
+  const posts = await getAllPosts();
+  const keys = new Set(posts.map((p) => `${p.year}/${p.month}/${p.day}`));
+  return [...keys].map((key) => {
+    const [year, month, day] = key.split("/");
+    return {
+      params: { year, month, day },
+      props: {
+        posts: posts.filter(
+          (p) => p.year === year && p.month === month && p.day === day,
+        ),
+      },
+    };
+  });
+}
+
+const { year, month, day } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<BaseLayout>
+  <h1>{formatFullDate(year, month, day)}</h1>
+  <ul>
+    {
+      posts.map((post) => (
+        <li>
+          <a href={post.url}>{post.entry.data.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>

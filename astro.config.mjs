@@ -1,6 +1,8 @@
 // @ts-check
 import { defineConfig, fontProviders } from "astro/config";
 
+import mdx from "@astrojs/mdx";
+
 // https://astro.build/config
 export default defineConfig({
   fonts: [
@@ -10,4 +12,6 @@ export default defineConfig({
       provider: fontProviders.google(),
     },
   ],
+
+  integrations: [mdx()],
 });

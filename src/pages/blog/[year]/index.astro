@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { getAllPosts } from "../../../lib/posts";
+
+export async function getStaticPaths() {
+  const posts = await getAllPosts();
+  const years = [...new Set(posts.map((p) => p.year))];
+  return years.map((year) => ({
+    params: { year },
+    props: { posts: posts.filter((p) => p.year === year) },
+  }));
+}
+
+const { year } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<BaseLayout>
+  <h1>{year}</h1>
+  <ul>
+    {
+      posts.map((post) => (
+        <li>
+          <a href={post.url}>{post.entry.data.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>
