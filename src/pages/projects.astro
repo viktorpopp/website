@@ -1,0 +1,53 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const projects = [
+  {
+    name: "Dragon DNS",
+    source: "https://github.com/viktorpopp/dragon-dns",
+    description:
+      "Easy to use dynamic DNS service for Cloudflare written in Rust, managed directly within the Cloudflare's dashboard.",
+  },
+  {
+    name: "Blåhaj32",
+    source: "https://github.com/viktorpopp/blahaj32",
+    description:
+      "A smol little RISC-based ISA, and hardware collection, optimized for... well, nothing really, but it is meant to be very easy to understand :3",
+  },
+  {
+    name: "Nuclear Reactor Simulator",
+    source: "https://github.com/viktorpopp/NuclearReactor",
+    description:
+      "Simple Pressurized Water Reactor (PWR) simulation written in C# with Unity.",
+  },
+];
+---
+
+<BaseLayout>
+  <div class="centered-container">
+    <h1>Projects <span id="cat"></span></h1>
+    {
+      projects.map((project) => (
+        <div>
+          <h2>
+            {project.name}
+            <span>
+              <sup>
+                &nbsp;
+                <a href={project.source} target="_blank" rel="noreferrer">
+                  source
+                </a>
+              </sup>
+            </span>
+          </h2>
+          <p>{project.description}</p>
+        </div>
+      ))
+    }
+  </div>
+</BaseLayout>
+
+<script>
+  import displayCat from "../utils/cat";
+  displayCat("cat");
+</script>
