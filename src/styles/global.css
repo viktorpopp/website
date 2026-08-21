@@ -1,3 +1,10 @@
+:root {
+  color-scheme: light dark;
+
+  --bg-color: light-dark(#f9f5d7, #1d2021);
+  --text-color: light-dark(#282828, #fbf1f7);
+}
+
 body {
   /* Layout */
   height: 100vh;
@@ -8,8 +15,8 @@ body {
   line-height: 1.6;
   font-size: 1.125em;
   font-family: var(--noto-serif);
-  color: #282828;
-  background-color: #f9f5d7;
+  color: var(--text-color);
+  background-color: var(--bg-color);
 }
 
 @media (max-width: 768px) {
