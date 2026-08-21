@@ -1,6 +1,7 @@
 ---
 import { Font } from "astro:assets";
 import "../styles/global.css";
+import Navigation from "../components/Navigation.astro";
 ---
 
 <html lang="en">
@@ -11,6 +12,7 @@ import "../styles/global.css";
     <Font cssVariable="--noto-serif" preload />
   </head>
   <body>
+    <Navigation />
     <slot />
   </body>
 </html>

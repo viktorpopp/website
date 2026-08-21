@@ -1,0 +1,26 @@
+---
+const items = [
+  { name: "home", url: "/" },
+  { name: "blog", url: "/blog" },
+];
+---
+
+<header>
+  <nav>
+    {items.map((item) => <a href={item.url}>{item.name}</a>)}
+  </nav>
+</header>
+
+<style>
+  header {
+    inset: 20px auto auto 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  nav a {
+    margin: 0 6px;
+  }
+</style>
