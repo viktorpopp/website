@@ -1,4 +1,5 @@
 ---
+import CatFace from "../components/CatFace.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const years_old = (() => {
@@ -47,7 +48,7 @@ const LINKS = Object.fromEntries(
 
 <BaseLayout>
   <div class="centered-container">
-    <h1>Hello <span id="cat"></span></h1>
+    <h1>Hello <CatFace /></h1>
 
     <p>
       My name is Viktor. I am a {years_old} years old hobbyist software developer
@@ -76,8 +77,3 @@ const LINKS = Object.fromEntries(
     </p>
   </div>
 </BaseLayout>
-
-<script>
-  import displayCat from "../utils/cat";
-  displayCat("cat");
-</script>

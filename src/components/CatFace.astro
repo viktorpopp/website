@@ -1,0 +1,19 @@
+<span class="cat-face" id="cat-face">:3</span>
+
+<script>
+  const CATS = [":3", ";3", ">:3", ">w<", "^w^", "^o^", "^.^", "^-^", ">.< "];
+
+  function pickCat() {
+    const el = document.getElementById("cat-face");
+    if (el) el.textContent = CATS[Math.floor(Math.random() * CATS.length)];
+  }
+
+  document.addEventListener("astro:page-load", pickCat);
+  pickCat();
+</script>
+
+<style>
+  .cat-face {
+    display: inline-block;
+  }
+</style>

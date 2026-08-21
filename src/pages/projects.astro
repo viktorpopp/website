@@ -1,4 +1,5 @@
 ---
+import CatFace from "../components/CatFace.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const projects = [
@@ -25,7 +26,7 @@ const projects = [
 
 <BaseLayout title="Projects">
   <div class="centered-container">
-    <h1>Projects <span id="cat"></span></h1>
+    <h1>Projects <CatFace /></h1>
     {
       projects.map((project) => (
         <div>
@@ -46,8 +47,3 @@ const projects = [
     }
   </div>
 </BaseLayout>
-
-<script>
-  import displayCat from "../utils/cat";
-  displayCat("cat");
-</script>
