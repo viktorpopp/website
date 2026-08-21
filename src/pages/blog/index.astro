@@ -6,7 +6,7 @@ const posts = await getAllPosts();
 ---
 
 <BaseLayout>
-  <h1>My blog :3</h1>
+  <h1>My blog <span id="cat"></span></h1>
   <ul>
     {
       posts.map((post) => (
@@ -17,3 +17,8 @@ const posts = await getAllPosts();
     }
   </ul>
 </BaseLayout>
+
+<script>
+  import displayCat from "../../utils/cat";
+  displayCat("cat");
+</script>

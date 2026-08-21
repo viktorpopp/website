@@ -35,3 +35,18 @@ h3 {
 a {
   color: inherit;
 }
+
+.centered-container {
+  position: absolute;
+  width: 30%;
+  box-sizing: border-box;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 768px) {
+  .centered-container {
+    width: 90%;
+  }
+}
