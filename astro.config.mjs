@@ -7,8 +7,8 @@ import mdx from "@astrojs/mdx";
 export default defineConfig({
   fonts: [
     {
-      name: "Noto Serif",
-      cssVariable: "--noto-serif",
+      name: "JetBrains Mono",
+      cssVariable: "--jetbrains-mono",
       provider: fontProviders.google(),
     },
   ],

@@ -14,7 +14,7 @@ body {
   /* Theme */
   line-height: 1.6;
   font-size: 1.125em;
-  font-family: var(--noto-serif);
+  font-family: var(--jetbrains-mono);
   color: var(--text-color);
   background-color: var(--bg-color);
 }
