@@ -1,4 +1,5 @@
 ---
+import type { Font } from "astro:assets";
 import CatFace from "../components/CatFace.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
@@ -52,28 +53,18 @@ const LINKS = Object.fromEntries(
 
     <p>
       My name is Viktor. I am a {years_old} years old hobbyist software developer
-      from&nbsp;
-      <a {...LINKS.denmark}>Denmark</a>.
+      from Denmark.
     </p>
 
     <p>
-      I primarily do <a {...LINKS.systemsDev}>systems-</a> and <a
-        {...LINKS.webDev}>web development</a
-      > but occasionally I also create <a {...LINKS.videoGame}>video games</a>,
-      and small utilities such as my <a {...LINKS.ddns}>DDNS service</a>. I also
-      like <a {...LINKS.chemistry}>chemistry</a>, <a {...LINKS.chess}
-        >playing chess</a
-      >, and <a {...LINKS.puzzles}>solving puzzles</a>.
+      I enjoy writing code that mainly runs on a server like my <a
+        {...LINKS.ddns}>DDNS service</a
+      >. I also like solving Rubik's Cubes and playing Chess.
     </p>
 
     <p>
-      I do most of my coding in <a {...LINKS.rust}>Rust</a>, <a {...LINKS.c}
-        >C</a
-      >, <a {...LINKS.cplusplus}>C++</a>, <a {...LINKS.ruby}>Ruby</a> and <a
-        {...LINKS.typescript}>TypeScript</a
-      >, but i also like playing around with other technologies such as <a
-        {...LINKS.golang}>Go</a
-      > and <a {...LINKS.csharp}>C#</a>.
+      I do most of my coding in Rust and C. I am also familiar with Unity,
+      Docker and Godot.
     </p>
 
     <p style="text-align: center;">
